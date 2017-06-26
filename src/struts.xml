@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+    <constant name="struts.enable.DynamicMethodInvocation" value="false" />
+    <constant name="struts.devMode" value="true" />
+
+    <package name="FirstStruts2Test" extends="struts-default">
+        <action name="login" class="com.ct.action.LoginAction">
+            <result name="success">/content/welcome.jsp</result>
+			<result name="input">/login.jsp</result>
+        </action>
+        <action name="login2" class="com.ct.action.LoginAction2">
+            <result name="success">/content/welcome.jsp</result>
+			<result name="input">/login2.jsp</result>
+        </action>
+        <action name="login3" class="com.ct.action.LoginAction3">
+            <result name="success">/content/welcome.jsp</result>
+			<result name="input">/login2.jsp</result>
+        </action>
+        <action name="loginConverter" class="com.ct.action.LoginConverterAction">
+            <result name="success">/content/welcome.jsp</result>
+			<result name="input">/loginConverter.jsp</result>
+        </action>
+        <action name="register" class="com.ct.action.RegisterAction">
+            <result name="success">/content/welcome.jsp</result>
+			<result name="input">/register.jsp</result>
+        </action>
+        <action name="register2" class="com.ct.action.RegisterAction2">
+            <result name="success">/content/welcome.jsp</result>
+			<result name="input">/register2.jsp</result>
+        </action>
+        <action name="register3" class="com.ct.action.RegisterAction3">
+            <result name="success">/content/welcome.jsp</result>
+			<result name="input">/register3.jsp</result>
+        </action>
+		<action name="*">
+			<result>/WEB-INF/content/{1}.jsp</result>
+		</action>
+    </package>
+
+   
+</struts>

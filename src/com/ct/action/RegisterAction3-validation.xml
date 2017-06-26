@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 指定校验配置文件的DTD信息 -->
+<!DOCTYPE validators PUBLIC
+	"-//Apache Struts//XWork Validator 1.0.3//EN"
+	"http://www.opensymphony.com/xwork/xwork-validator-1.0.3.dtd">
+<validators>
+	<!-- <field name="user">
+		<field-validator type="visitor">
+			<param name="context">userContext</param>
+			<param name="appendPrefix">true</param>
+			<message>用户的：</message>
+		</field-validator>
+	</field> -->
+	<field name="user.userName">
+		<!-- 必填 -->
+		<field-validator type="requiredstring">
+			<param name="trim">true</param>
+			<message>用户名不能为空</message>
+		</field-validator>
+		<field-validator type="regex">
+			<param name="expression"><![CDATA[(\w({4,32})]]></param>
+			<message>用户名必须为4~32位的数字和字母组合</message>
+		</field-validator>
+	</field>
+	<field name="user.password">
+		<!-- 必填 -->
+		<field-validator type="requiredstring">
+			<param name="trim">true</param>
+			<message>密码不能为空</message>
+		</field-validator>
+		<field-validator type="regex">
+			<param name="expression"><![CDATA[(\w({4,32})]]></param>
+			<message>密码必须为4~32位的数字和字母组合</message>
+		</field-validator>
+	</field>
+	<field name="user.age">
+		<!-- 必填 -->
+		<field-validator type="int">
+			<param name="min">1</param>
+			<param name="max">100</param>
+			<message>年龄必须为${min}~${max}之间的数字</message>
+		</field-validator>
+	</field>
+	<field name="user.birthDay">
+		<!-- 必填 -->
+		<field-validator type="date">
+			<param name="min">1990-01-01</param>
+			<param name="max">2017-06-26</param>
+			<message>生日必须为${min}~${max}之间的日期</message>
+		</field-validator>
+	</field>
+</validators>
