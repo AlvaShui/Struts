@@ -16,5 +16,21 @@
 	<s:textfield name="user.birthDay" label="出生日期"></s:textfield>
 	<s:submit value="注册"></s:submit>
 </s:form>
+<center>
+<s:form	action="register3" validate="true">
+	<s:textfield label="user.userName" value="用户名"></s:textfield>
+	<s:password label="user.password" value="密码"></s:password>
+	<s:textfield label="user.age" value="年龄"></s:textfield>
+	<s:textfield label="user.birthDay" value="出生日期"></s:textfield>
+	
+</s:form>
+<form action="register" method="post">
+	   用户名:<input type="text" name="userName"/><br/>
+                密码:<input type="password" name="password"/><br/>
+     	年龄:<input type="text" name="age"/><br/>
+     	生日:<input type="text" name="birthDay"/><br/>
+         <input type="submit" value="注册"/>
+</form>
+</center>
 </body>
 </html>
