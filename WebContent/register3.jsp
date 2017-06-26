@@ -12,9 +12,9 @@
 <center>
 <s:form	action="register3" validate="true">
 	<s:textfield label="user.userName" value="用户名"></s:textfield>
-	<s:password label="user.password" value="用户名"></s:textfield>
-	<s:textfield label="user.userName" value="用户名"></s:textfield>
-	<s:textfield label="user.userName" value="用户名"></s:textfield>
+	<s:password label="user.password" value="密码"></s:password>
+	<s:textfield label="user.age" value="年龄"></s:textfield>
+	<s:textfield label="user.birthDay" value="出生日期"></s:textfield>
 	
 </s:form>
 <form action="register" method="post">
