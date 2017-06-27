@@ -6,45 +6,29 @@ import com.ct.domain.User;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class RegisterAction extends ActionSupport{
-	private String userName;
-	private String password;
-	private int age;
-	private Date birthDay;
 	
-	public String getUserName() {
-		return this.userName;
-	}
-
-	public void setUserName(String user) {
-		userName = user;
-	}
-
-	public String getPassword() {
-		return this.password;
-	}
-
-	public void setPassword(String pwd) {
-		password = pwd;
-	}
 	
-	public int getAge() {
-		return age;
+	
+	@Override
+	public void validate() {
+		if(user.getUserName().contains("admin"))
+			this.addFieldError("user.userName", "该类用户名易被禁止使用");
+		if(user.getPassword().contains("1234"))
+			this.addFieldError("user.password", "密码过于简单，请重设");
 	}
 
-	public void setAge(int age) {
-		this.age = age;
+	private User user;
+	
+
+	public User getUser() {
+		return user;
 	}
 
-	public Date getBirthDay() {
-		return birthDay;
-	}
-
-	public void setBirthDay(Date birthDay) {
-		this.birthDay = birthDay;
+	public void setUser(User user) {
+		this.user = user;
 	}
 
 	public String execute() throws Exception {
-		User user = new User(userName, password, age, birthDay);
 		System.out.println(user);
 		return SUCCESS;
 	}
